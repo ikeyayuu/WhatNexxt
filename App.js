@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, TextInput, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Constants from 'expo-constants'
 import { Item } from './components/Item.js'
+import { Header } from './components/Header.js'
 
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
   const onSubmit = ( event ) => {
     const id = new Date().getTime().toString()
     const item = { id: id, name: input, status: false }
+    Alert.alert("Task Added")
     setData([...data, item ])
     setInput(null)
     setValidInput( false )
@@ -105,6 +107,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Header title="WHATNEXXT"/>
       <View style={styles.header}>
         <TextInput 
           style={styles.input} 
