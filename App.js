@@ -108,7 +108,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header title="WHATNEXXT"/>
-      <View style={styles.header}>
+      <View style={styles.inputContainer}>
         <TextInput 
           style={styles.input} 
           onChangeText={ onTextChange } 
@@ -120,7 +120,7 @@ export default function App() {
           disabled={ (validInput) ? false : true }
           onPress={onSubmit}
         >
-          <Text style={styles.buttonText}>Add to list</Text>
+          <Text style={styles.buttonText}>ADD</Text>
         </TouchableOpacity>
       </View>
       <FlatList data={data} keyExtractor={(item) => item.id} renderItem={Renderer} />
@@ -134,22 +134,32 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightyellow',
     marginTop: Constants.statusBarHeight,
   },
-  header: {
+  inputContainer: {
+    color: '#cccccc',
+    shadowColor: '#171717',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: .1,
+    marginBottom: 5,
     display: 'flex',
+    justifyContent: 'space-between',
     flexDirection: 'row',
   },
   input: {
-    backgroundColor: '#FFFFFF',
-    fontSize: 20,
+    backgroundColor: '#e6e6e6',
+    fontSize: 18,
     borderColor: '#DDDDDD',
     borderWidth: 1,
     padding: 5,
     flex: 1,
   },
   button: {
-    backgroundColor: 'black',
+    width: 100,
+    backgroundColor: '#ff5a36',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonText: {
+    fontWeight: '700',
     color: 'white',
     padding: 10,
   },

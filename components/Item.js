@@ -33,16 +33,17 @@ export const Item = (props) => {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor: 'lightgreen',
-    borderBottomColor: 'black',
+    width: '100%',
+    borderBottomColor: '#cccccc',
     borderBottomWidth: 1,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: 'space-between',
   },
   text: {
     flex: 1,
-    color: "black",
+    color: "#333333",
   },
   textDone: {
     flex: 1,
